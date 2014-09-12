@@ -33,8 +33,15 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
 
-FILES_TO_COPY = ( ('extra/robots.txt', 'robots.txt'),
-                  ('extra/.htaccess', '.htaccess') )
+STATIC_PATHS = [
+	'extra/robots.txt',
+	'extra/.htaccess'
+	]
+
+EXTRA_PATH_METADATA = {
+	'extra/robots.txt': {'path': 'robots.txt'},
+	'extra/.htaccess': {'path': '.htaccess'}
+	}
 
 ARTICLE_URL = 'posts/{slug}'
 ARTICLE_SAVE_AS = 'posts/{slug}.html'
