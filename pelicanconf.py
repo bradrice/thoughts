@@ -58,3 +58,5 @@ TYPOGRIFY = True
 
 FEED_DOMAIN = SITEURL
 FEED_ATOM = 'feeds/atom.xml'
+
+THEME = 'themes/electric-barnyard'
