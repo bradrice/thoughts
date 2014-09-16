@@ -29,11 +29,12 @@
         <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
         {% endif %}
         {% endblock head %}
+        <link rel="stylesheet" type="text/css" href="{{ SITEURL }}/theme/css/style.css" />
 </head>
 
 <body id="index" class="home">
         <header id="banner" class="body">
-                <img src="/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" / >
+                <img src="{{ SITEURL }}/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" / >
                 <h1><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
         </header><!-- /#banner -->
         <nav id="menu"><ul>

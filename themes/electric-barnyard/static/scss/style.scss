@@ -1,0 +1,8 @@
+@import "susy";
+
+body { @include container(80em); }
+nav { @include span(25%); }
+
+h1 {
+	font-size: 1.8em;
+}
