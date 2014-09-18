@@ -1,0 +1,4 @@
+.sass-cache
+.sass-cache/*
+themes/electric-barnyard/static/scss/.sass-cache/*
+.htaccess

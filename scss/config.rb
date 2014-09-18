@@ -9,10 +9,10 @@
 http_path = "/"
 
 # 2. probably don't need to touch these
-css_dir = "../css"
+css_dir = "../themes/electric-barnyard/static/css"
 sass_dir = "./"
-images_dir = "../images"
-javascripts_dir = "../js"
+images_dir = "../themes/electric-barnyard/static/images"
+javascripts_dir = "../themes/electric-barnyard/static/js"
 environment = :development
 relative_assets = true
 
@@ -28,3 +28,5 @@ output_style = :expanded
 
 # don't touch this
 preferred_syntax = :scss
+
+require 'breakpoint'

@@ -15,7 +15,7 @@ FTP_TARGET_DIR=/
 SSH_HOST=bradrice.webfactional.com
 SSH_PORT=22
 SSH_USER=bradrice
-SSH_TARGET_DIR=/home/bradrice/webapps/pelican/thoughts
+SSH_TARGET_DIR=/home/bradrice/webapps/thoughts
 
 S3_BUCKET=my_s3_bucket
 
