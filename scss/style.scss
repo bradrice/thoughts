@@ -4,58 +4,226 @@
 @include border-box-sizing;
 
 $susy : (
-	columns: 4,
+	columns: 12,
 	global-box-sizing: border-box,
-	debug: (image: show),
+	debug: (image: hide),
 );
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+.img-responsive {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
 
 body {
 	font-family: Oxygen, Helvetica, Arial, sans-serif;
+	background-color: #e5f0f1;
 }
 
 .wrap {
-	@include container(1140px);
+	padding: 12px;
+	@media (min-width: 980px){
+		@include container(1140px);
 	}
-
-.content {
-@include span(3 of 4);
-	margin-top: 10vh;
-	height: 80vh;
-	background: rgba(113, 218, 218, 0.0);
 }
 
-.sidebar {
-	@include span(1 of 4 last);
-	margin-top: 10vh;
-	height: 40vh;
-	background: rgba(250, 231, 179, 0.0);
+header#banner {
+	@include clearfix;
+}
+
+/* unvisited link */
+a:link {
+    color: #264cf1;
+}
+
+/* visited link */
+a:visited {
+    color: #264cf1;
+}
+
+/* mouse over link */
+a:hover {
+    color: #26a5f1;
+}
+
+/* selected link */
+a:active {
+    color: #0000FF;
+}
+
+.content {
+	@include span(12 of 12);
+	@include clearfix;
+	margin-top: 1em;
+
+	@media (min-width: 768px){
+		@include span(12 of 12);
+	}
+}
+
+ol#post-list {
+	list-style: none;
+	padding: 12px 1rem;
+	margin: 4px 4px;
+}
+
+ol#post-list li {
+	margin-bottom: .5em;
+}
+
+#post-list article {
+	padding: 1em;
+	background-color: #fff;
+}
+
+#post-list article {
+	/* unvisited link */
+	a:link {
+	    color: #26a5f1;
+	}
+
+	/* visited link */
+	a:visited {
+	    color: #26a5f1;
+	}
+
+	/* mouse over link */
+	a:hover {
+	    color: #26a5f1;
+	}
+
+	/* selected link */
+	a:active {
+	    color: #0000FF;
+	}
+}
+
+h1 {
+	font-size: 2.4em;
+	padding: 12px 0;
+	color: #000;
+	margin: 4px;
 }
 
 h2 {
-	padding: 1rem 0;
-	text-align: center;
-	color: #555;
+	font-size: 2em;
+	padding: 12px 0;
+	color: #000;
+	margin: 4px;
 }
 
-nav { @include span(25%); }
+h2 {
+	font-size: 1.8em;
+	padding: 12px 0;
+	color: #000;
+	margin: 4px;
+}
 
-header h1 {
+h4 {
+	font-size: 1.4em;
+	padding: 12px 0;
+	color: #000;
+	margin: 4px;
+}
+
+footer.post-info {
+	background-color: #ebe0d1;
+	padding: 12px;
+	border-bottom: 1px solid #ddd;
+	
+
+	@media (min-width: 768px){
+		float: right;
+		margin-right: 6px;
+		@include border-radius(2px);
+	}
+}
+
+abbr[title] {
+  border-bottom: none;
+}
+
+header#banner h1 {
 	font-size: 2.8em;
 	font-family: Pacifico, Helvetica, Arial, sans-serif;
 	font-weight: 700;
 	font-style: italic;
+	margin-bottom: 4px;
 }
 
 header h1 a {
 	text-decoration: none;
 }
 
+header#banner h4 {
+	font-size: 1.2em;
+	color: #ad4929;
+}
+
+section.article-body {
+	background-color: #fff;
+	padding: 12px;
+}
+
+nav#menu {
+	background-color: #ebe0d1;
+	margin: 1em .5em .5em;
+	@include border-radius(8px);
+
+}
+
+nav#menu ul {
+	padding: 12px 6px;
+	margin: 0 12px;
+}
+
+nav#menu ul li {
+	padding: 12px 6px;
+	display: inline;
+}
+
 #brand-holder {
-	@include span(1 of 4);
+	@include span(12 of 12);
+	@include clearfix;
+
+@media (min-width: 768px){
+	@include span(3 of 12);
 	@include clearfix; 
+	}
 }
 
 #brand-title {
-	@include span(3 of 4);
+
+	@include span(12 of 12 last);
 	@include clearfix; 
+
+@media (min-width: 768px){
+	@include span(9 of 12 last);
+	@include clearfix; 
+	}
+}
+
+section#extras .blogroll {
+	@include span(12 of 12);
+	@include clearfix;
+
+	@media (min-width: 768px){
+		@include span(8 of 12);
+	}
+}
+
+section#extras .social {
+	@include span(12 of 12);
+	@include clearfix;
+
+	@media (min-width: 768px){
+		@include span(4 of 12 last);
+	}
 }

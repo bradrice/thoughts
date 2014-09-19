@@ -3,9 +3,10 @@
 <head>
         <title>Electric-Barnyard</title>
         <meta charset="utf-8" />
+        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Full Atom Feed" />
         <link href="/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
         <link href='http://fonts.googleapis.com/css?family=Pacifico|Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="http://bradrice.com/thoughts/theme/css/style.css" />
 
 </head>
 
@@ -14,26 +15,28 @@
         <div class="wrap">
         <header id="banner" class="body">
         <div id="brand-holder">
-                <img src="/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" / >
+                <img src="http://bradrice.com/thoughts/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" class="img-responsive" / >
         </div>
         <div id="brand-title">
-                <h1><a href="/">Electric-Barnyard <strong></strong></a></h1>
+                <h1><a href="http://bradrice.com/thoughts/">Electric-Barnyard <strong></strong></a></h1>
+                <h4>Rural code poetry.</h4>
         </div>
         </header><!-- /#banner -->
+        <nav id="menu"><ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="http://www.bradrice.com">Brad Rice</a></li>
+        </ul></nav><!-- /#menu -->
+
         <div class="content">
 <section id="content">
-<h2>All articles</h2>
 
 <ol id="post-list">
         <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="/posts/a-test-post" rel="bookmark" title="Permalink to A test post">A test&nbsp;post</a></h2> </header>
+                <header> <h2 class="entry-title"><a href="http://bradrice.com/thoughts/posts/a-pelican-post" rel="bookmark" title="Permalink to A pelican post">A pelican&nbsp;post</a></h2> </header>
                 <footer class="post-info">
-                    <abbr class="published" title="2014-09-12T03:00:00"> Fri 12 September 2014 </abbr>
-                    <address class="vcard author">By
-                        <a class="url fn" href="/author/your-name/">Your Name</a>
-                    </address>
+                    <abbr class="published" title="2014-09-19T05:00:00"> Fri 19 September 2014 </abbr>
                 </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>Hello!</p> </div><!-- /.entry-content -->
+                <div class="entry-content"> <p>I’ve worked through different blog software such as Drupal and Wordpress and the thing that struck me was why the complexity for writing a simple blog. I suppose all software is complex, but wouldn’t it be nice if there was a way to write without having to worry ...</p> </div><!-- /.entry-content -->
         </article></li>
 </ol><!-- /#posts-list -->
 <p class="paginator">
@@ -41,16 +44,35 @@
 </p>
 </section><!-- /#content -->
         </div>
-        <div class="sidebar">
-        <nav id="menu"><ul>
-        </ul></nav><!-- /#menu -->
-        </div>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h3>blogroll</h3>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://www.bradrice.com">Brad Rice</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h3>social</h3>
+                        <ul>
+                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
         </div><!-- end wrap -->
+        <div class="wrap">
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
                 Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
                 which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
         </footer><!-- /#contentinfo -->
+        </div>
+
 </body>
 </html>

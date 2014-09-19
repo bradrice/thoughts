@@ -16,7 +16,7 @@
 {% endblock %}
 
 {% block content %}
-<section id="content" class="body">
+<section id="content" class="body article-body">
   <header>
     <h2 class="entry-title">
       <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
@@ -33,13 +33,6 @@
       {{ article.locale_modified }}
     </abbr>
 	{% endif %}
-    {% if article.authors %}
-    <address class="vcard author">
-      By {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-        {% endfor %}
-    </address>
-    {% endif %}
   </footer><!-- /.post-info -->
   <div class="entry-content">
     {{ article.content }}

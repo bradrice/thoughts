@@ -39,17 +39,13 @@
         <div class="wrap">
         <header id="banner" class="body">
         <div id="brand-holder">
-                <img src="{{ SITEURL }}/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" / >
+                <img src="{{ SITEURL }}/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" class="img-responsive" / >
         </div>
         <div id="brand-title">
                 <h1><a href="{{ SITEURL }}/">{{ SITENAME }} <strong>{{ SITESUBTITLE }}</strong></a></h1>
+                <h4>Rural code poetry.</h4>
         </div>
         </header><!-- /#banner -->
-        <div class="content">
-        {% block content %}
-        {% endblock %}
-        </div>
-        <div class="sidebar">
         <nav id="menu"><ul>
         {% for title, link in MENUITEMS %}
             <li><a href="{{ link }}">{{ title }}</a></li>
@@ -66,13 +62,49 @@
           {% endif %}
         {% endif %}
         </ul></nav><!-- /#menu -->
+
+        <div class="content">
+        {% block content %}
+        {% endblock %}
         </div>
+        <section id="extras" class="body">
+        {% if LINKS %}
+                <div class="blogroll">
+                        <h3>blogroll</h3>
+                        <ul>
+                        {% for name, link in LINKS %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                </div><!-- /.blogroll -->
+        {% endif %}
+        {% if SOCIAL or FEED_ALL_ATOM or FEED_ALL_RSS %}
+                <div class="social">
+                        <h3>social</h3>
+                        <ul>
+                            {% if FEED_ALL_ATOM %}
+                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate">atom feed</a></li>
+                            {% endif %}
+                            {% if FEED_ALL_RSS %}
+                            <li><a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate">rss feed</a></li>
+                            {% endif %}
+
+                        {% for name, link in SOCIAL %}
+                            <li><a href="{{ link }}">{{ name }}</a></li>
+                        {% endfor %}
+                        </ul>
+                </div><!-- /.social -->
+        {% endif %}
+        </section><!-- /#extras -->
         </div><!-- end wrap -->
+        <div class="wrap">
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
                 Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
                 which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
         </footer><!-- /#contentinfo -->
+        </div>
+
 </body>
 </html>
