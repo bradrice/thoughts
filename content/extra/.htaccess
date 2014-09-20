@@ -1,6 +1,7 @@
 Options +FollowSymLinks
 RewriteEngine On
 
+RewriteBase /thoughts
 # Remove trailing slashes.
 # e.g. example.com/foo/ will redirect to example.com/foo
 RewriteCond %{REQUEST_FILENAME} !-d
