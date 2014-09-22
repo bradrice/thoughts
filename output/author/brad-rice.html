@@ -4,10 +4,9 @@
  <meta name="viewport" content="initial-scale=1" maximum-scale="1" />
         <title>Electric-Barnyard - Articles by Brad Rice</title>
         <meta charset="utf-8" />
-        <link href="http://bradrice.com/thoughts/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Full Atom Feed" />
-        <link href="http://bradrice.com/thoughts/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
+        <link href="/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
         <link href='http://fonts.googleapis.com/css?family=Pacifico|Oxygen:400,300,700' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="http://bradrice.com/thoughts/theme/css/style.css" />
+        <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
 
 </head>
 
@@ -17,17 +16,18 @@
         <header id="banner" class="body">
         <div class="wrap">
         <div id="brand-holder">
-                <img src="http://bradrice.com/thoughts/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" class="img-responsive" / >
+                <img src="/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" class="img-responsive" / >
         </div>
         <div id="brand-title">
-                <h1><a href="http://bradrice.com/thoughts/thoughts">Electric-Barnyard</a></h1>
+                <h1><a href="/thoughts">Electric-Barnyard</a></h1>
                 <h4>Mucking about with code in rural Ohio</h4>
         </div>
         </div>
         <div class="wrap">
         <nav id="menu"><ul>
             <li><a href="/thoughts">Home</a></li>
-              <li><a href="http://bradrice.com/thoughts/category/python">Python</a></li>
+              <li><a href="/category/python">Python</a></li>
+              <li><a href="/category/sass">SASS</a></li>
         </ul></nav><!-- /#menu -->
         </div><!-- end wrap -->
         </header><!-- /#banner -->
@@ -38,12 +38,23 @@
 
 <ol id="post-list">
         <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="http://bradrice.com/thoughts/posts/a-pelican-post" rel="bookmark" title="Permalink to A pelican post">A pelican&nbsp;post</a></h2> </header>
+                <header> <h2 class="entry-title"><a href="/posts/orgainizing-with-sass" rel="bookmark" title="Permalink to Organizing css with sass">Organizing css with&nbsp;sass</a></h2> </header>
+                <footer class="post-info">
+                    <abbr class="published" title="2014-09-22T10:00:00"> Mon 22 September 2014 </abbr>
+                </footer><!-- /.post-info -->
+                <div class="entry-content"> <p>If you use <span class="caps">SASS</span> to compile your css, you have access to a nice way of organizing your css code to make it easier to read and easier to find what needs to change when you are tweaking a layout. Consider the&nbsp;following.</p>
+<div class="highlight"><pre><span class="nt">nav</span><span class="nn">#menu</span> <span class="p">{</span>
+    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#a27bfe</span><span class="p">;</span>
+    <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">8 ...</span></pre></div> </div><!-- /.entry-content -->
+                <a href="/posts/orgainizing-with-sass" class="readmore" rel="bookmark" title="Permalink to Organizing css with sass">Read more</a>
+        </article></li>
+        <li><article class="hentry">
+                <header> <h2 class="entry-title"><a href="/posts/a-pelican-post" rel="bookmark" title="Permalink to A pelican post">A pelican&nbsp;post</a></h2> </header>
                 <footer class="post-info">
                     <abbr class="published" title="2014-09-19T05:00:00"> Fri 19 September 2014 </abbr>
                 </footer><!-- /.post-info -->
                 <div class="entry-content"> <p>I’ve utilized different blog software such as <a href="http://drupal.com/">Drupal</a> and <a href="https://wordpress.org/">Wordpress</a>. Perhaps for serving up a blog, that is too much overhead. I suppose all software is complex, but wouldn’t it be nice if there was a way to write without having to worry so much about installing and ...</p> </div><!-- /.entry-content -->
-                <a href="http://bradrice.com/thoughts/posts/a-pelican-post" rel="bookmark" title="Permalink to A pelican post">Read more</a>
+                <a href="/posts/a-pelican-post" class="readmore" rel="bookmark" title="Permalink to A pelican post">Read more</a>
         </article></li>
 </ol><!-- /#posts-list -->
 <p class="paginator">
@@ -70,7 +81,6 @@
                     <a href="https://plus.google.com/u/0/110400900554477791544/posts" target="_blank"><img src="/static/images/icons/Google_Plus_001.png" alt="google+"></a>
                     <a href="http://www.linkedin.com/in/bradbucks/" target="_blank"><img src="/static/images/icons/Linkedin_001.png" alt="LinkedIn"></a>
                     <a href="http://twitter.com/brad_rice" target="_blank"><img src="/static/images/icons/Twitter_001.png" alt="twitter"></a>
-                        <a href="http://bradrice.com/thoughts/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"><img src="/static/images/icons/RSS_001.png" alt="rss"></a>
                 </div>
                 </div><!-- /.social -->
         </section><!-- /#extras -->

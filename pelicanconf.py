@@ -35,6 +35,7 @@ MENUITEMS = (('Home', '/thoughts'),
 			)
 
 DEFAULT_PAGINATION = 10
+PYGMENTS_RST_OPTIONS = {'classprefix': 'pgcss', 'linenos': 'table'}
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True

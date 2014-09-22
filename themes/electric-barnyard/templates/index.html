@@ -12,7 +12,7 @@
                     <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
                 </footer><!-- /.post-info -->
                 <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">Read more</a>
+                <a href="{{ SITEURL }}/{{ article.url }}" class="readmore" rel="bookmark" title="Permalink to {{ article.title|striptags }}">Read more</a>
         </article></li>
 {% endfor %}
 </ol><!-- /#posts-list -->
