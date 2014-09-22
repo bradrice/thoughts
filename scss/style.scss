@@ -24,17 +24,24 @@ $susy : (
 
 body {
 	font-family: Oxygen, Helvetica, Arial, sans-serif;
+	line-height: 160%;
 	background-color: #e5f0f1;
+}
+
+.entry-content p {
+	letter-spacing: .025em;
 }
 
 .wrap {
 	padding: 12px;
+	@include clearfix;
 	@media (min-width: 980px){
 		@include container(1140px);
 	}
 }
 
 header#banner {
+background-color: #fff;
 	@include clearfix;
 }
 
@@ -70,8 +77,13 @@ a:active {
 
 ol#post-list {
 	list-style: none;
-	padding: 12px 1rem;
-	margin: 4px 4px;
+	padding: 0px;
+	margin: 0px;
+	@media (min-width: 768px){
+		padding: 12px 1rem;
+		margin: 4px 4px;
+	}
+	
 }
 
 ol#post-list li {
@@ -81,6 +93,7 @@ ol#post-list li {
 #post-list article {
 	padding: 1em;
 	background-color: #fff;
+	@include border-radius(8px);
 }
 
 #post-list article {
@@ -134,16 +147,9 @@ h4 {
 }
 
 footer.post-info {
-	background-color: #ebe0d1;
-	padding: 12px;
-	border-bottom: 1px solid #ddd;
-	
-
-	@media (min-width: 768px){
-		float: right;
-		margin-right: 6px;
-		@include border-radius(2px);
-	}
+	border-bottom: 1px solid #a27bfe;
+	display: inline;
+	padding: 2px;
 }
 
 abbr[title] {
@@ -165,18 +171,19 @@ header h1 a {
 header#banner h4 {
 	font-size: 1.2em;
 	color: #ad4929;
+	margin: 2px 0;
+	padding: 0px;
 }
 
 section.article-body {
 	background-color: #fff;
 	padding: 12px;
+	margin: 6px;
 }
 
 nav#menu {
-	background-color: #ebe0d1;
-	margin: 1em .5em .5em;
+	background-color: #a27bfe;
 	@include border-radius(8px);
-
 }
 
 nav#menu ul {
@@ -185,16 +192,27 @@ nav#menu ul {
 }
 
 nav#menu ul li {
-	padding: 12px 6px;
 	display: inline;
 }
+
+nav#menu ul li>a {
+	text-decoration: none;
+	color: #fff;
+	padding: 12px 6px;
+	}
+
+nav#menu ul li>a:hover {
+	color: #334bf1;
+	background-color: #fff;
+}
+
 
 #brand-holder {
 	@include span(12 of 12);
 	@include clearfix;
 
 @media (min-width: 768px){
-	@include span(3 of 12);
+	@include span(4 of 12);
 	@include clearfix; 
 	}
 }
@@ -205,7 +223,7 @@ nav#menu ul li {
 	@include clearfix; 
 
 @media (min-width: 768px){
-	@include span(9 of 12 last);
+	@include span(8 of 12 last);
 	@include clearfix; 
 	}
 }
@@ -215,7 +233,7 @@ section#extras .blogroll {
 	@include clearfix;
 
 	@media (min-width: 768px){
-		@include span(8 of 12);
+		@include span(6 of 12);
 	}
 }
 
@@ -224,6 +242,12 @@ section#extras .social {
 	@include clearfix;
 
 	@media (min-width: 768px){
-		@include span(4 of 12 last);
+		@include span(6 of 12 last);
 	}
+}
+
+footer#contentinfo {
+	text-align: center;
+	padding: 12px;
+	background-color: #f3caa8;
 }

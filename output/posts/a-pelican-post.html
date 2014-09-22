@@ -4,9 +4,9 @@
  <meta name="viewport" content="initial-scale=1" maximum-scale="1" />
           <title>Electric-Barnyard</title>
         <meta charset="utf-8" />
-        <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Full Atom Feed" />
-        <link href="/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
-        <link href="/feeds/misc.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Categories Atom Feed" />
+        <link href="http://bradrice.com/thoughts/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Full Atom Feed" />
+        <link href="http://bradrice.com/thoughts/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
+        <link href="http://bradrice.com/thoughts/feeds/python.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Categories Atom Feed" />
 
 
 
@@ -21,21 +21,25 @@
 
 <body id="index" class="home">
 
-        <div class="wrap">
+        
         <header id="banner" class="body">
+        <div class="wrap">
         <div id="brand-holder">
                 <img src="http://bradrice.com/thoughts/theme/images/electric-barnyard_250.png" alt="electric-barnyard" title="Electric barnyard" class="img-responsive" / >
         </div>
         <div id="brand-title">
-                <h1><a href="http://bradrice.com/thoughts/thoughts">Electric-Barnyard <strong></strong></a></h1>
-                <h4>Rural code poetry.</h4>
+                <h1><a href="http://bradrice.com/thoughts/thoughts">Electric-Barnyard</a></h1>
+                <h4>Mucking about with code in rural Ohio</h4>
         </div>
-        </header><!-- /#banner -->
+        </div>
+        <div class="wrap">
         <nav id="menu"><ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="http://www.bradrice.com">Brad Rice</a></li>
+            <li><a href="/thoughts">Home</a></li>
+              <li class="active"><a href="http://bradrice.com/thoughts/category/python">Python</a></li>
         </ul></nav><!-- /#menu -->
-
+        </div><!-- end wrap -->
+        </header><!-- /#banner -->
+        <div class="wrap">
         <div class="content">
 <section id="content" class="body article-body">
   <header>
@@ -50,15 +54,15 @@
     </abbr>
   </footer><!-- /.post-info -->
   <div class="entry-content">
-    <p>I’ve worked through different blog software such as Drupal and Wordpress and the thing that struck me was why the complexity for writing a simple blog. I suppose all software is complex, but wouldn’t it be nice if there was a way to write without having to worry so much about logging into a content management system. I thought, it would be better if I could just create my own html. I know html well&nbsp;enough.</p>
-<p>But then I realized that I don’t even need that, what I need is a good text editor such as vim or <a href="http://www.iawriter.com/mac/"><span class="caps">IA</span> Writer</a>. Then I could write and save it somewhere and it can show up on my blog. That is sort of what Pelican is. It is a static site generator. It uses Python code and scripts to generate out all the site code from templates and markdown files. I write the markdown, save it and then run the script. Wala, a blog post. The only catch is to put some meta data into the top of the markdown so the script knows what to do with the&nbsp;story.</p>
-<p>My site is hosted on <a href="http://www.webfaction.com">webfaction</a>. So I found a good source to get me started: <a href="http://martinfitzpatrick.name/article/pelicans-on-webfaction/">Pelicans on Webfaction</a>. I got stuck a few times, but after banging away at it I now have the framework to get it off the&nbsp;ground.  </p>
+    <p>I’ve utilized different blog software such as Drupal and Wordpress. Perhaps for serving up a blog, that is too much overhead. I suppose all software is complex, but wouldn’t it be nice if there was a way to write without having to worry so much about installing and updating software. Wouldn’t it be nice to find simplicity. A system for writing using just a text editor such as <a href="http://www.vim.org/">vim</a> or <a href="http://www.iawriter.com/mac/"><span class="caps">IA</span> Writer</a>. Then I could write and save it somewhere and have it show up on my blog. That is what Pelican is. It is a static site generator. It uses Python code and scripts to generate out all the site code from templates and markdown files. I write the markdown, save it and then run the script. Walla, a blog post. The only catch is to put some meta data into the top of the markdown so the script knows what to do with the story, how to date and categorize&nbsp;it.</p>
+<p>My site is hosted on <a href="http://www.webfaction.com">webfaction</a>. So I found a good source to get me started: <a href="http://martinfitzpatrick.name/article/pelicans-on-webfaction/">Pelicans on Webfaction</a>. I got stuck a few times, but after banging away at it I now have the framework to get it off the ground. I’ve created a repo so I can pull and edit my files from any machine I would like to use. I’m still trying to get Windows to work properly. Pelican has some nice scripts and they have some shortcuts that are really nice, but they utilize ‘make’ which is Unix only. So I’m still working on getting a nice method of writing and editing on windows so I can use my Samsung laptop. I’ll post updates here as I make&nbsp;progress.</p>
+<p>Pelican uses Jinja templates, so I launched using the packaged theme called Simple, which give you the basic template files. I did a small amount of editing of those files and did most of the work in the css. I used <a href="http://sass-lang.com/"><span class="caps">SASS</span></a> and <a href="http://susy.oddbird.net/">Susy</a> to write and compile my <span class="caps">CSS</span>. My image is created in Adobe Illustrator <span class="caps">CC</span>.</p>
   </div><!-- /.entry-content -->
 </section>
         </div>
         <section id="extras" class="body">
                 <div class="blogroll">
-                        <h3>blogroll</h3>
+                        <h4>Blogroll</h4>
                         <ul>
                             <li><a href="http://getpelican.com/">Pelican</a></li>
                             <li><a href="http://python.org/">Python.org</a></li>
@@ -67,24 +71,25 @@
                         </ul>
                 </div><!-- /.blogroll -->
                 <div class="social">
-                        <h3>social</h3>
-                        <ul>
-                            <li><a href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate">atom feed</a></li>
-
-                            <li><a href="#">You can add links in your config file</a></li>
-                            <li><a href="#">Another social link</a></li>
-                        </ul>
+                        <div class="icns">
+                    <h4>Connect</h4>
+                    <a href="http://www.bradrice.com/blog" target="_blank"><img src="/static/images/icons/BR_32.png"></a>
+                    <a href="mailto:brad@bradrice.com"><img src="/static/images/icons/email_001.png" alt="email"></a>
+                    <a href="https://www.facebook.com/brad.c.rice" target="_blank"><img src="/static/images/icons/facebook_001.png" alt="facebook"></a>
+                    <a href="https://plus.google.com/u/0/110400900554477791544/posts" target="_blank"><img src="/static/images/icons/Google_Plus_001.png" alt="google+"></a>
+                    <a href="http://www.linkedin.com/in/bradbucks/" target="_blank"><img src="/static/images/icons/Linkedin_001.png" alt="LinkedIn"></a>
+                    <a href="http://twitter.com/brad_rice" target="_blank"><img src="/static/images/icons/Twitter_001.png" alt="twitter"></a>
+                        <a href="http://bradrice.com/thoughts/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"><img src="/static/images/icons/RSS_001.png" alt="rss"></a>
+                </div>
                 </div><!-- /.social -->
         </section><!-- /#extras -->
         </div><!-- end wrap -->
-        <div class="wrap">
         <footer id="contentinfo" class="body">
                 <address id="about" class="vcard body">
                 Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
                 which takes great advantage of <a href="http://python.org">Python</a>.
                 </address><!-- /#about -->
         </footer><!-- /#contentinfo -->
-        </div>
 
 </body>
 </html>

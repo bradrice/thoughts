@@ -14,5 +14,5 @@ RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L,QSA]
 
-ErrorDocument 404 /404.html
-ErrorDocument 403 /403.html
+ErrorDocument 404 /thoughts/404.html
+ErrorDocument 403 /thoughts/403.html

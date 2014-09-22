@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 
 AUTHOR = u'Brad Rice'
 SITENAME = u'Electric-Barnyard'
+SITESUBTITLE = u'Mucking about with code in rural Ohio'
 SITEURL = ''
 
 PATH = 'content'
@@ -30,8 +31,7 @@ LINKS = (('Pelican', 'http://getpelican.com/'),
 SOCIAL = (('You can add links in your config file', '#'),
           ('Another social link', '#'),)
 
-MENUITEMS = (('Home', '/'),
-			('Brad Rice', 'http://www.bradrice.com'),
+MENUITEMS = (('Home', '/thoughts'),
 			)
 
 DEFAULT_PAGINATION = 10
