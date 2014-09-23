@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Electric-Barnyard</title><link href="http://bradrice.com/thoughts/" rel="alternate"></link><link href="http://bradrice.com/thoughts/feeds/all.atom.xml" rel="self"></link><id>http://bradrice.com/thoughts/</id><updated>2014-09-22T10:00:00+02:00</updated><entry><title>Organizing css with sass</title><link href="http://bradrice.com/thoughts/posts/orgainizing-with-sass" rel="alternate"></link><updated>2014-09-22T10:00:00+02:00</updated><author><name>Brad Rice</name></author><id>tag:bradrice.com,2014-09-22:thoughts/posts/orgainizing-with-sass</id><summary type="html">&lt;p&gt;If you use &lt;span class="caps"&gt;SASS&lt;/span&gt; to compile your css, you have access to a nice way of organizing your css code to make it easier to read and easier to find what needs to change when you are tweaking a layout. Consider the&amp;nbsp;following.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Electric-Barnyard</title><link href="http://bradrice.com/thoughts/" rel="alternate"></link><link href="http://bradrice.com/thoughts/feeds/all.atom.xml" rel="self"></link><id>http://bradrice.com/thoughts/</id><updated>2014-09-23T16:28:00+02:00</updated><entry><title>A vim template for pelican</title><link href="http://bradrice.com/thoughts/posts/vim-template-pelican" rel="alternate"></link><updated>2014-09-23T16:28:00+02:00</updated><author><name>Brad Rice</name></author><id>tag:bradrice.com,2014-09-23:thoughts/posts/vim-template-pelican</id><summary type="html">&lt;p&gt;I installed the &lt;a href="https://github.com/aperezdc/vim-template"&gt;vim-template
+plugin&lt;/a&gt; for creating templates to create a
+boilerplate markdown file for&amp;nbsp;pelican.&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nl"&gt;Date:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;FDATE&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;
+&lt;span class="nl"&gt;Author:&lt;/span&gt; &lt;span class="n"&gt;Brad&lt;/span&gt; &lt;span class="n"&gt;Rice&lt;/span&gt;
+&lt;span class="nl"&gt;Email:&lt;/span&gt; &lt;span class="n"&gt;brad&lt;/span&gt;&lt;span class="err"&gt;@&lt;/span&gt;&lt;span class="n"&gt;bradrice&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;com&lt;/span&gt;
+&lt;span class="nl"&gt;Title:&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;HERE&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;
+&lt;span class="nl"&gt;Slug:&lt;/span&gt; 
+&lt;span class="nl"&gt;Tags:&lt;/span&gt; 
+&lt;span class="nl"&gt;Category:&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;Now when I am in my content folder, I use vim to create a new post, it
+prepopulates the meta at the top of the file and automatically puts the
+date and time into the file. My cursor is at the Title&amp;nbsp;field.&lt;/p&gt;
+&lt;p&gt;Here&amp;#8217;s my &lt;a href="https://gist.github.com/bradrice/465e1d82abd5619b70b8"&gt;vim-template
+gist&lt;/a&gt;.&lt;/p&gt;</summary><category term="pelican"></category><category term="vim"></category></entry><entry><title>Organizing css with sass</title><link href="http://bradrice.com/thoughts/posts/orgainizing-with-sass" rel="alternate"></link><updated>2014-09-22T10:00:00+02:00</updated><author><name>Brad Rice</name></author><id>tag:bradrice.com,2014-09-22:thoughts/posts/orgainizing-with-sass</id><summary type="html">&lt;p&gt;If you use &lt;span class="caps"&gt;SASS&lt;/span&gt; to compile your css, you have access to a nice way of organizing your css code to make it easier to read and easier to find what needs to change when you are tweaking a layout. Consider the&amp;nbsp;following.&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;nav&lt;/span&gt;&lt;span class="nn"&gt;#menu&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
     &lt;span class="na"&gt;background-color&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mh"&gt;#a27bfe&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="k"&gt;@include&lt;/span&gt;&lt;span class="nd"&gt; border-radius&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="kt"&gt;px&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;

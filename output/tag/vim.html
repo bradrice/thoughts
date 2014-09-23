@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
  <meta name="viewport" content="initial-scale=1" maximum-scale="1" />
-        <title>Electric-Barnyard</title>
+        <title>Electric-Barnyard - vim</title>
         <meta charset="utf-8" />
         <link href="http://bradrice.com/thoughts/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Full Atom Feed" />
         <link href="http://bradrice.com/thoughts/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
-        <link href="http://bradrice.com/thoughts/feeds/sass.atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Categories Atom Feed" />
         <link href='http://fonts.googleapis.com/css?family=Pacifico|Oxygen:400,300,700' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="http://bradrice.com/thoughts/theme/css/style.css" />
 
@@ -30,7 +29,7 @@
             <li><a href="/thoughts">Home</a></li>
               <li><a href="http://bradrice.com/thoughts/category/pelican">Pelican</a></li>
               <li><a href="http://bradrice.com/thoughts/category/python">Python</a></li>
-              <li class="active"><a href="http://bradrice.com/thoughts/category/sass">SASS</a></li>
+              <li><a href="http://bradrice.com/thoughts/category/sass">SASS</a></li>
               <li><a href="http://bradrice.com/thoughts/category/velocity">Velocity</a></li>
         </ul></nav><!-- /#menu -->
         </div><!-- end wrap -->
@@ -38,19 +37,29 @@
         <div class="wrap">
         <div class="content">
 <section id="content">
-<h2>Articles in the SASS category</h2>
 
 <ol id="post-list">
         <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="http://bradrice.com/thoughts/posts/orgainizing-with-sass" rel="bookmark" title="Permalink to Organizing css with sass">Organizing css with&nbsp;sass</a></h2> </header>
+                <header> <h2 class="entry-title"><a href="http://bradrice.com/thoughts/posts/vim-template-pelican" rel="bookmark" title="Permalink to A vim template for pelican">A vim template for&nbsp;pelican</a></h2> </header>
                 <footer class="post-info">
-                    <abbr class="published" title="2014-09-22T10:00:00"> Mon 22 September 2014 </abbr>
+                    <abbr class="published" title="2014-09-23T16:28:00"> Tue 23 September 2014 </abbr>
                 </footer><!-- /.post-info -->
-                <div class="entry-content"> <p>If you use <span class="caps">SASS</span> to compile your css, you have access to a nice way of organizing your css code to make it easier to read and easier to find what needs to change when you are tweaking a layout. Consider the&nbsp;following.</p>
-<div class="highlight"><pre><span class="nt">nav</span><span class="nn">#menu</span> <span class="p">{</span>
-    <span class="na">background-color</span><span class="o">:</span> <span class="mh">#a27bfe</span><span class="p">;</span>
-    <span class="k">@include</span><span class="nd"> border-radius</span><span class="p">(</span><span class="mi">8 ...</span></pre></div> </div><!-- /.entry-content -->
-                <a href="http://bradrice.com/thoughts/posts/orgainizing-with-sass" class="readmore" rel="bookmark" title="Permalink to Organizing css with sass">Read more</a>
+                <div class="entry-content"> <p>I installed the <a href="https://github.com/aperezdc/vim-template">vim-template
+plugin</a> for creating templates to create a
+boilerplate markdown file for&nbsp;pelican.</p>
+<div class="highlight"><pre><span class="nl">Date:</span> <span class="o">%</span><span class="n">FDATE</span><span class="o">%</span>
+<span class="nl">Author:</span> <span class="n">Brad</span> <span class="n">Rice</span>
+<span class="nl">Email:</span> <span class="n">brad</span><span class="err">@</span><span class="n">bradrice</span><span class="p">.</span><span class="n">com</span>
+<span class="nl">Title:</span> <span class="o">%</span><span class="n">HERE</span><span class="o">%</span>
+<span class="nl">Slug:</span> 
+<span class="nl">Tags:</span> 
+<span class="nl">Category:</span>
+</pre></div>
+
+
+<p>Now when I am in my content folder, I use vim to create a new post, it
+prepopulates the meta ...</p> </div><!-- /.entry-content -->
+                <a href="http://bradrice.com/thoughts/posts/vim-template-pelican" class="readmore" rel="bookmark" title="Permalink to A vim template for pelican">Read more</a>
         </article></li>
 </ol><!-- /#posts-list -->
 <p class="paginator">
