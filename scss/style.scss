@@ -203,7 +203,8 @@ nav#menu {
 	ul li>a {
 		text-decoration: none;
 		color: #fff;
-		padding: 12px 6px;
+		padding: 12px 9px;
+		border-right: 1px solid #7d5fc3;
 	}
 
 	ul li>a:hover {
@@ -236,6 +237,7 @@ div.highlight pre {
 @media (min-width: 768px){
 	@include span(8 of 12 last);
 	@include clearfix; 
+	margin-top: 2em;
 	}
 }
 

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta name="viewport" content="initial-scale=1" maximum-scale="1" />
+          <title>Electric-Barnyard</title>
+        <meta charset="utf-8" />
+        <link href="/feeds/atom.xml" type="application/atom+xml" rel="alternate" title="Electric-Barnyard Atom Feed" />
+
+
+
+    <meta name="tags" contents="dotcms" />
+    <meta name="tags" contents="velocity" />
+    <meta name="tags" contents="arrays" />
+    <meta name="tags" contents="lists" />
+    <meta name="tags" contents="maps" />
+
+        <link href='http://fonts.googleapis.com/css?family=Pacifico|Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="/theme/css/style.css" />
+
+</head>
+
+<body id="index" class="home">
+
+        
+        <header id="banner" class="body">
+        <div class="wrap">
+        <div id="brand-holder">
+                <img src="/theme/images/electric-barnyard_400.jpg" alt="electric-barnyard" title="Electric barnyard" class="img-responsive" / >
+        </div>
+        <div id="brand-title">
+                <h1><a href="/thoughts">Electric-Barnyard</a></h1>
+                <h4>Mucking about with code in rural Ohio</h4>
+        </div>
+        </div>
+        <div class="wrap">
+        <nav id="menu"><ul>
+            <li><a href="/thoughts">Home</a></li>
+              <li><a href="/category/python">Python</a></li>
+              <li><a href="/category/sass">SASS</a></li>
+              <li class="active"><a href="/category/velocity">Velocity</a></li>
+        </ul></nav><!-- /#menu -->
+        </div><!-- end wrap -->
+        </header><!-- /#banner -->
+        <div class="wrap">
+        <div class="content">
+<section id="content" class="body article-body">
+  <header>
+    <h2 class="entry-title">
+      <a href="/posts/dotcms-map-lists" rel="bookmark"
+         title="Permalink to dotcms map lists">dotcms map&nbsp;lists</a></h2>
+ 
+  </header>
+  <footer class="post-info">
+    <abbr class="published" title="2010-10-21T03:13:00">
+      Thu 21 October 2010
+    </abbr>
+  </footer><!-- /.post-info -->
+  <div class="entry-content">
+    <p>Using the array list in dotCMS is pretty straight forward and if you&#8217;ve used arrays in any other script language, you&#8217;ll see the similarities of using the velocity tools. The power of lists comes when you use maps in dotCMS. Especially, when you use maps within an array list you&#8217;ll become a velocity power&nbsp;user.</p>
+<p>In my earlier article I showed a number of ways to use ArrayLists in dotCMS using velocity templating language. Lists are important to understand especially because the macro that pulls data from the Lucene index in dotCMS returns an array list. The really interesting thing about Array Lists are that they can have hash map members. And that is what #pullContent returns. That&#8217;s why you can get a variable after calling #pullContent in the foreach&nbsp;statement.</p>
+<div class="highlight"><pre><span class="cp">#</span><span class="nf">foreach</span><span class="p">($</span><span class="nv">item</span> <span class="o">in</span> <span class="p">$</span><span class="nv">list</span><span class="p">)</span>
+<span class="nt">&lt;p&gt;</span><span class="p">$</span><span class="nv">item</span><span class="p">.</span><span class="nv">title</span><span class="nt">&lt;/p&gt;</span>
+<span class="cp">#</span><span class="nf">end</span>
+</pre></div>
+
+
+<p>In this example, I have looped through the $list return variable and put the title field of each item into a p tag. The reason you can refer to the variable item in this way is the list looks something like this much truncated map&nbsp;list:</p>
+<div class="highlight"><pre><span class="o">[{</span><span class="n">title</span><span class="o">=</span><span class="n">Akron</span><span class="err">&#39;</span><span class="n">s</span> <span class="s">&quot;Better Half&quot;</span><span class="o">},{</span><span class="n">title</span><span class="o">=</span><span class="n">Along</span> <span class="n">the</span> <span class="n">Towpath</span><span class="o">},</span> <span class="o">{</span><span class="n">title</span><span class="o">=</span><span class="n">Ascending</span> <span class="n">Order</span><span class="o">},</span> <span class="o">{</span><span class="n">title</span><span class="o">=</span><span class="n">Behind</span> <span class="n">A</span> <span class="n">Diplomatic</span> <span class="n">Curtain</span><span class="o">}]</span>
+</pre></div>
+
+
+<p>Actually if you used the pullContent macro there would be a lot of additional fields. I simplified it for the sake of understanding. The foreach iterates through the list and prints the elements each in a paragraph tag. This is pretty standard fare for working with velocity in dotCMS. (note: dotCMS 1.9.3 is being released with a new pull tool and pullContent will be deprecated, however the principles are the&nbsp;same).</p>
+<p>dotCMS gives us two important tools to create lists. dotCMS exposes Map through the contents&nbsp;viewtool.</p>
+<p>The contents viewtool has two important methods for creating the list or map&nbsp;collection.</p>
+<div class="highlight"><pre><span class="p">$</span><span class="nv">contents</span><span class="p">.</span><span class="nv">getEmptyList</span><span class="p">()</span><span class="x"> and </span><span class="p">$</span><span class="nv">contents</span><span class="p">.</span><span class="nv">getEmptyMap</span><span class="p">()</span><span class="x"></span>
+</pre></div>
+
+
+<p>So you usually will want to start by creating an empty list using a set statement. I&#8217;ll use an example of how to build a list of book titles that start with the letter A. Assume the book title is in the field&nbsp;text4.</p>
+<p>First pull all the titles that have a word that starts with A (in this case I&#8217;m passing it in the url string so the variable $search_term contains the&nbsp;letter).</p>
+<div class="highlight"><pre><span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">query</span> <span class="o">=</span> <span class="s2">&quot;+text4:${search_term}*&quot;</span><span class="p">)</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">pullContent</span><span class="p">(</span><span class="s2">&quot;+structureInode:1430164 +live:true +deleted:false $query&quot;</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span> <span class="s2">&quot;text4 asc&quot;</span><span class="p">)</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">book_list</span> <span class="o">=</span> <span class="p">$</span><span class="nv">list</span><span class="p">)</span><span class="x"></span>
+<span class="p">$</span><span class="nv">booklist</span><span class="x"> now contains my list of books, all of them have a word in the title that begins with A.</span>
+</pre></div>
+
+
+<p>now before we iterate, lets make sure we got a list&nbsp;result.</p>
+<div class="highlight"><pre><span class="cp">#</span><span class="nf">if</span><span class="p">($</span><span class="nv">book_list</span><span class="p">.</span><span class="nv">size</span><span class="p">()</span> <span class="o">&gt;</span> <span class="m">0</span><span class="p">)</span><span class="x"></span>
+</pre></div>
+
+
+<p>If we did create the empty list to hold just the books that the first letter of the book is&nbsp;A.</p>
+<div class="highlight"><pre><span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">contentList</span> <span class="o">=</span> <span class="p">$</span><span class="nv">contents</span><span class="p">.</span><span class="nv">getEmptyList</span><span class="p">())</span><span class="x"></span>
+</pre></div>
+
+
+<p>Now loop through the books and put the book into the empty list. I check if the first letter matches the $search_term which is the letter &#8220;A.&#8221; In this case I am adding the book title, identifier, description and then adding it to the empty map&nbsp;$!contentList.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10</pre></div></td><td class="code"><div class="highlight"><pre><span class="cp">#</span><span class="nf">foreach</span><span class="p">($</span><span class="nv">book</span> <span class="o">in</span> <span class="p">$</span><span class="nv">book_list</span><span class="p">)</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">word</span> <span class="o">=</span> <span class="p">$</span><span class="nv">book</span><span class="p">.</span><span class="nv">title</span><span class="p">.</span><span class="nv">trim</span><span class="p">())</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">if</span><span class="p"> ($</span><span class="nv">word</span><span class="p">.</span><span class="nv">substring</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;$search_term&quot;</span><span class="p">)</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">item</span> <span class="o">=</span> <span class="p">$</span><span class="nv">contents</span><span class="p">.</span><span class="nv">getEmptyMap</span><span class="p">())</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">dummy</span> <span class="o">=</span> <span class="p">$</span><span class="nv">item</span><span class="p">.</span><span class="nv">put</span><span class="p">(</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="p">$</span><span class="nv">book</span><span class="p">.</span><span class="nv">identifier</span><span class="p">))</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">dummy</span> <span class="o">=</span> <span class="p">$</span><span class="nv">item</span><span class="p">.</span><span class="nv">put</span><span class="p">(</span><span class="s1">&#39;title&#39;</span><span class="p">,</span> <span class="p">$</span><span class="nv">word</span><span class="p">))</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">dummy</span> <span class="o">=</span> <span class="p">$</span><span class="nv">item</span><span class="p">.</span><span class="nv">put</span><span class="p">(</span><span class="s1">&#39;desc&#39;</span><span class="p">,</span> <span class="p">$</span><span class="nv">book</span><span class="p">.</span><span class="nv">description</span><span class="p">))</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">set</span><span class="p">($</span><span class="nv">_dummy</span> <span class="o">=</span> <span class="p">$</span><span class="nv">contentList</span><span class="p">.</span><span class="nv">add</span><span class="p">($</span><span class="nv">item</span><span class="p">))</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">end</span><span class="x"></span>
+<span class="cp">#</span><span class="nf">end</span><span class="x"></span>
+</pre></div>
+</td></tr></table>
+
+<p>You&#8217;ll notice that I created an empty map on each loop. The put statements adds each book element to the map. After running this loop you will have a list that looks like&nbsp;this.</p>
+<div class="highlight"><pre><span class="o">[{</span><span class="n">title</span><span class="o">=</span><span class="n">Aim</span> <span class="n">and</span> <span class="n">Progress</span> <span class="n">by</span> <span class="n">Psychology</span> <span class="n">and</span> <span class="n">Other</span> <span class="n">Sciences</span><span class="o">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">This</span> <span class="n">volume</span> <span class="n">is</span><span class="o">...,</span> <span class="n">id</span><span class="o">=</span><span class="mi">1463710</span><span class="o">},</span> <span class="o">{</span><span class="n">title</span><span class="o">=</span><span class="n">Akron</span><span class="err">&#39;</span><span class="n">s</span> <span class="s">&quot;Better Half&quot;</span><span class="o">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">While</span> <span class="n">the</span> <span class="n">men</span> <span class="n">of</span> <span class="n">Akron</span> <span class="n">busied</span><span class="o">...,</span> <span class="n">id</span><span class="o">=</span><span class="mi">1463314</span><span class="o">},</span> <span class="o">{</span><span class="n">title</span><span class="o">=</span><span class="n">Along</span> <span class="n">the</span> <span class="n">Towpath</span><span class="o">,</span> <span class="n">desc</span><span class="o">=</span><span class="n">Along</span> <span class="n">the</span> <span class="n">Towpath</span><span class="o">..,</span> <span class="n">id</span><span class="o">=</span><span class="mi">1462747</span><span class="o">}]</span>
+</pre></div>
+
+
+<p>I&#8217;ve truncated the description field to save space. Now you can see I have a content list made up of only books that begin with the letter&nbsp;A.</p>
+<p>I can now loop through that list to build my html display. You should be able to come up with all kinds of ways to use this combining lists and map&nbsp;lists.</p>
+<div class="highlight"><pre><span class="cp">#</span><span class="nf">foreach</span><span class="p">($</span><span class="nv">cont</span> <span class="o">in</span> <span class="p">$</span><span class="nv">contentList</span><span class="p">)</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;book&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;h4&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://www.uakron.edu/uapress2/book-lists/book-details/index.dot?id=</span><span class="p">$</span><span class="nv">cont</span><span class="p">.</span><span class="nv">id</span><span class="s">&quot;</span><span class="nt">&gt;</span><span class="p">$</span><span class="nv">cont</span><span class="p">.</span><span class="nv">title</span><span class="nt">&lt;/a&gt;&lt;/h4&gt;</span>
+<span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">&quot;desc&quot;</span><span class="nt">&gt;</span><span class="p">$</span><span class="nv">cont</span><span class="p">.</span><span class="nv">desc</span><span class="p">.</span><span class="nv">substring</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">300</span><span class="p">)</span><span class="ni">&amp;nbsp;&amp;gt;&amp;gt;</span><span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://www.uakron.edu/uapress2/book-lists/book-details/index.dot?id=</span><span class="p">$</span><span class="nv">cont</span><span class="p">.</span><span class="nv">id</span><span class="s">&quot;</span><span class="nt">&gt;</span>Read more<span class="nt">&lt;/a&gt;&lt;/p&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+<span class="cp">#</span><span class="nf">end</span>
+</pre></div>
+
+
+<p>Note from 2014 after dotcms is now up to&nbsp;2.5</p>
+<blockquote>
+<p>By the way, you can now use #set($list = []) and #set($map = {}) as a shortcut to $contents.getEmptyList() and&nbsp;$contents.getEmptyMap()</p>
+</blockquote>
+  </div><!-- /.entry-content -->
+</section>
+        </div>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h4>Blogroll</h4>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="http://www.bradrice.com">Brad Rice</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <div class="icns">
+                    <h4>Connect</h4>
+                    <a href="http://www.bradrice.com/blog" target="_blank"><img src="/static/images/icons/BR_32.png"></a>
+                    <a href="mailto:brad@bradrice.com"><img src="/static/images/icons/email_001.png" alt="email"></a>
+                    <a href="https://www.facebook.com/brad.c.rice" target="_blank"><img src="/static/images/icons/facebook_001.png" alt="facebook"></a>
+                    <a href="https://plus.google.com/u/0/110400900554477791544/posts" target="_blank"><img src="/static/images/icons/Google_Plus_001.png" alt="google+"></a>
+                    <a href="http://www.linkedin.com/in/bradbucks/" target="_blank"><img src="/static/images/icons/Linkedin_001.png" alt="LinkedIn"></a>
+                    <a href="http://twitter.com/brad_rice" target="_blank"><img src="/static/images/icons/Twitter_001.png" alt="twitter"></a>
+                </div>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+        </div><!-- end wrap -->
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>

@@ -993,22 +993,23 @@ nav#menu ul li {
 nav#menu ul li > a {
   text-decoration: none;
   color: #fff;
-  padding: 12px 6px;
+  padding: 12px 9px;
+  border-right: 1px solid #7d5fc3;
 }
-/* line 209, ../../../../scss/style.scss */
+/* line 210, ../../../../scss/style.scss */
 nav#menu ul li > a:hover {
   color: #334bf1;
   background-color: #fff;
 }
 
-/* line 215, ../../../../scss/style.scss */
+/* line 216, ../../../../scss/style.scss */
 div.highlight pre {
   border-left: 4px solid #ccc;
   padding: 1em;
   margin: 1em;
 }
 
-/* line 221, ../../../../scss/style.scss */
+/* line 222, ../../../../scss/style.scss */
 #brand-holder {
   width: 100%;
   float: left;
@@ -1018,7 +1019,7 @@ div.highlight pre {
   *zoom: 1;
 }
 @media (min-width: 768px) {
-  /* line 221, ../../../../scss/style.scss */
+  /* line 222, ../../../../scss/style.scss */
   #brand-holder {
     width: 32.20339%;
     float: left;
@@ -1028,7 +1029,7 @@ div.highlight pre {
   }
 }
 
-/* line 231, ../../../../scss/style.scss */
+/* line 232, ../../../../scss/style.scss */
 #brand-title {
   width: 100%;
   float: right;
@@ -1037,17 +1038,18 @@ div.highlight pre {
   *zoom: 1;
 }
 @media (min-width: 768px) {
-  /* line 231, ../../../../scss/style.scss */
+  /* line 232, ../../../../scss/style.scss */
   #brand-title {
     width: 66.10169%;
     float: right;
     margin-right: 0;
     overflow: hidden;
     *zoom: 1;
+    margin-top: 2em;
   }
 }
 
-/* line 242, ../../../../scss/style.scss */
+/* line 244, ../../../../scss/style.scss */
 section#extras .blogroll {
   width: 100%;
   float: left;
@@ -1057,7 +1059,7 @@ section#extras .blogroll {
   *zoom: 1;
 }
 @media (min-width: 768px) {
-  /* line 242, ../../../../scss/style.scss */
+  /* line 244, ../../../../scss/style.scss */
   section#extras .blogroll {
     width: 49.15254%;
     float: left;
@@ -1065,7 +1067,7 @@ section#extras .blogroll {
   }
 }
 
-/* line 251, ../../../../scss/style.scss */
+/* line 253, ../../../../scss/style.scss */
 section#extras .social {
   width: 100%;
   float: left;
@@ -1075,7 +1077,7 @@ section#extras .social {
   *zoom: 1;
 }
 @media (min-width: 768px) {
-  /* line 251, ../../../../scss/style.scss */
+  /* line 253, ../../../../scss/style.scss */
   section#extras .social {
     width: 49.15254%;
     float: right;
@@ -1083,14 +1085,14 @@ section#extras .social {
   }
 }
 
-/* line 260, ../../../../scss/style.scss */
+/* line 262, ../../../../scss/style.scss */
 footer#contentinfo {
   text-align: center;
   padding: 12px;
   background-color: #f3caa8;
 }
 
-/* line 266, ../../../../scss/style.scss */
+/* line 268, ../../../../scss/style.scss */
 a.readmore {
   display: inline-block;
   padding: 6px;
