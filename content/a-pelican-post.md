@@ -4,7 +4,7 @@ Email: brad@bradrice.com
 Title: A pelican post
 Slug: a-pelican-post
 Tags: pelican, python, writing
-Category: Python
+Category: Pelican
 
 I’ve utilized different blog software such as [Drupal](http://drupal.com/) and [Wordpress](https://wordpress.org/). Perhaps for serving up a blog, that is too much overhead. I suppose all software is complex, but wouldn’t it be nice if there was a way to write without having to worry so much about installing and updating software. Wouldn’t it be nice to find simplicity. A system for writing using just a text editor such as [vim](http://www.vim.org/) or [IA Writer](http://www.iawriter.com/mac/). Then I could write and save it somewhere and have it show up on my blog. That is what [Pelican](http://blog.getpelican.com/) is. It is a static site generator. It uses Python code and scripts to generate out all the site code from templates and markdown files. I write the markdown, save it and then run the script. Walla, a blog post. The only catch is to put some meta data into the top of the markdown so the script knows what to do with the story, how to date and categorize it.
 
