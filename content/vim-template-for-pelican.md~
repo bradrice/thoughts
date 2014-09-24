@@ -10,7 +10,7 @@ I installed the [vim-template
 plugin](https://github.com/aperezdc/vim-template) for creating templates to create a
 boilerplate markdown file for pelican.
 
-    :::vim
+    :::
     Date: %FDATE%
     Author: Brad Rice
     Email: brad@bradrice.com

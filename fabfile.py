@@ -11,7 +11,7 @@ DEPLOY_PATH = env.deploy_path
 
 # Remote server configuration
 production = 'bradrice@bradrice.webfactional.com:22'
-dest_path = '/home/bradrice/webapps/pelican/thoughts'
+dest_path = '/home/bradrice/webapps/thoughts'
 
 # Rackspace Cloud Files configuration settings
 env.cloudfiles_username = 'my_rackspace_username'
